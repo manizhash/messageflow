@@ -5,7 +5,11 @@ import requests
 
 
 def print_message(message):
-    pass
+    dt = datetime.fromtimestamp(message["time"])
+    str_dt = dt.strftime("%d %b %H:%M:%S")
+    print(str_dt, message["name"])
+    print(message["text"])
+    print()
 
 
 after = 0
