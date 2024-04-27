@@ -54,6 +54,8 @@ def get_messages():
     for message in messages:
         if message["time"] > after:
             response.append(message)
+        if len(response)>50:
+            response=response[-50:]
 
     return {"messages": response[:50]}
 
