@@ -7,23 +7,13 @@ app = Flask(__name__)
 messages = []
 
 
-@app.route("/")
-def hello():
-    return "<b>Hello, Word!</b>"
-
-
 @app.route("/status")
 def status():
     dt = datetime.now()
     return {
         "status": True,
         "name": "Mini messenger",
-        "time": time.time(),
-        "time1": time.asctime(),
-        "time2": dt,
-        "time3": str(dt),
-        "time4": dt.isoformat(),
-        "time5": dt.strftime("%d.%b %H:%M:%S"),
+        "time": dt.strftime("%d.%b %H:%M:%S"),
     }
 
 
